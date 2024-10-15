@@ -2,18 +2,9 @@
 
 while True:
     try:
-        num = int(input("Escreva um número:\n"))
-        cont=1
-        primo=0
-        while cont <= num:
-            if num % cont == 0:
-                primo+=1
-            cont+=1
-        if primo == 2:
-            print("É primo")
-            break
-        else:
-            print("Não é primo")
-            break
+        quant = int(input("Escreva a quantidade de números que deseja inserir:\n"))
+        for i in range(quant):
+            num = i + 1
+            print(num)
     except ValueError:
         print("Não é um valor inteiro.")
