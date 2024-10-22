@@ -9,6 +9,5 @@ while True:
             if tab >= 10:
                 break
             else: tab+=1
-            
     except ValueError:
         print("Não é um valor inteiro.")
