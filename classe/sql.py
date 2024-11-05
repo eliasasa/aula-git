@@ -1,28 +1,36 @@
 import mysql.connector as sql
-#from biblioteca import User, Livro
+from biblioteca import User, Livro, SQL
 
-conector = sql.connect (
-    host='10.28.2.62',
-    user='suporte',
-    password='suporte',
-    database='biblioteca'
-)
+db = SQL(host='10.28.2.62', user='suporte', password='suporte', database='biblioteca')
 
-cursor = conector.cursor()
+# Inserir livros no banco de dados (comentado, pois você já inseriu)
+# cursor.execute('insert into livro (titulo, autor, genero, status, codigo) values ("O Pequeno Principe", "Enzo", "Fantasia", "Disponivel", 123);')
+# cursor.execute('INSERT INTO livro (titulo, autor, genero, status, codigo) VALUES ("A Menina que Roubava Livros", "Markus Zusak", "Drama", "Disponível", 124);')
 
-#cursor.execute('insert into livro (titulo, autor, genero, status, codigo) values ("O Pequeno Principe", "Enzo", "Fantasia", "Disponivel", 123);')
-cursor.execute('INSERT INTO livro (titulo, autor, genero, status, codigo) VALUES ("A Menina que Roubava Livros", "Markus Zusak", "Drama", "Disponível", 124);')
-cursor.execute('INSERT INTO livro (titulo, autor, genero, status, codigo) VALUES ("1984", "George Orwell", "Distopia", "Disponível", 125);')
-cursor.execute('INSERT INTO livro (titulo, autor, genero, status, codigo) VALUES ("O Hobbit", "J.R.R. Tolkien", "Fantasia", "Disponível", 126);')
-cursor.execute('INSERT INTO livro (titulo, autor, genero, status, codigo) VALUES ("O Alquimista", "Paulo Coelho", "Ficção", "Disponível", 127);')
-cursor.execute('INSERT INTO livro (titulo, autor, genero, status, codigo) VALUES ("Harry Potter e a Pedra Filosofal", "J.K. Rowling", "Fantasia", "Disponível", 128);')
+# conector.commit()
 
-# Não se esqueça de fazer commit se necessário
-conector.commit()
+# db.cursor.execute('SELECT * FROM livro')
+# resultados = db.cursor.fetchall()
 
-cursor.execute('select * from livro;')
-x = cursor.fetchall()
+db.listar_livros()
 
-print(x)
+db.search(autorS='Enzo')
 
-conector.commit()
+
+# for resultado in resultados:
+#     print(resultado)
+
+# for i in x:
+#     titulo, autor, genero, status, codigo = i
+#     Livro(titulo=titulo, autor=autor, genero=genero, status=status, codigo=codigo)
+
+# print(Livro.livros)
+
+
+# livro_exemplo = Livro.livros[0]  
+# livro_exemplo.listar_livros()  
+
+
+# livro_exemplo.search(autorS='Enzo')
+
+# conector.commit()
