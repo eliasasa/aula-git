@@ -1,21 +1,23 @@
 import mysql.connector as sql
-from biblioteca import User, Livro, SQL
+from db import SQL
+from biblioteca import Biblioteca
+from livro import Livro
 
-db = SQL(host='10.28.2.62', user='suporte', password='suporte', database='biblioteca')
+# db = SQL(host='10.28.2.62', user='suporte', password='suporte', database='biblioteca')
 
 # Inserir livros no banco de dados (comentado, pois você já inseriu)
-# cursor.execute('insert into livro (titulo, autor, genero, status, codigo) values ("O Pequeno Principe", "Enzo", "Fantasia", "Disponivel", 123);')
+# db.cursor.execute('insert into livro (titulo, autor, genero, status, codigo) values ("O Pequeno Principe 2", "Enzo", "Fantasia", "Disponivel", 125);')
 # cursor.execute('INSERT INTO livro (titulo, autor, genero, status, codigo) VALUES ("A Menina que Roubava Livros", "Markus Zusak", "Drama", "Disponível", 124);')
 
-# conector.commit()
+# db.conector.commit()
 
 # db.cursor.execute('SELECT * FROM livro')
 # resultados = db.cursor.fetchall()
 
-db.listar_livros()
+# db.listar_livros()
 
-db.search(autorS='Enzo')
-
+# db.search(autorS='Enzo')
+# db.search()
 
 # for resultado in resultados:
 #     print(resultado)
@@ -34,3 +36,12 @@ db.search(autorS='Enzo')
 # livro_exemplo.search(autorS='Enzo')
 
 # conector.commit()
+
+
+# Biblioteca.search(autorS='Enzo', codigoS=123)
+
+# Biblioteca.listar_livros()
+
+# Livro.add_livro()
+
+Biblioteca.add_livro()
