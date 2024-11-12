@@ -1,10 +1,9 @@
-from config.db import SQL as db
-from config import connect
-from models import livro
+from config.db import SQL
+from config.connect import host
+from models.livro import Livro
 
 class Biblioteca:
-
-    sql = db.SQL(**connect.config)
+    sql = SQL(**host)  # Correção na instância do SQL
 
     @staticmethod
     def listar_livros():
@@ -58,10 +57,9 @@ class Biblioteca:
 
         Biblioteca.sql.desconectar()
 
-    def add_livro ():
-        Biblioteca.sql.conectar
-        
-        Livro.sql.conector.commit()
+    @staticmethod
+    def add_livro():
+        Biblioteca.sql.conectar()
         Livro.create()
-        
-        Biblioteca.sql.desconectar
+        Biblioteca.sql.conector.commit()  # Confirma as alterações no banco
+        Biblioteca.sql.desconectar()
