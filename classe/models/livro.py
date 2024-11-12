@@ -1,5 +1,6 @@
-import db
-from connect import config
+from config.db import SQL as db
+
+config = {'host':'10.28.2.62', 'user':'suporte', 'password':'suporte', 'database':'biblioteca'}
 
 class Livro:
     sql = db.SQL(**config)
@@ -22,3 +23,5 @@ class Livro:
         create = Livro.sql.cursor.execute(query, (tituloA, autorA, generoA, 'Disponível', codigoA))
         print("Livro adicionado com sucesso!")
         return create #mandar para outra classe livrocontroler
+
+Livro.__name__ = 'Livro'

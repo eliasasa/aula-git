@@ -33,3 +33,5 @@ class User:
         self.nome = nome
         self.cpf = cpf
         self.livros_emprestados = 0
+
+SQL.__name__ = 'SQL'

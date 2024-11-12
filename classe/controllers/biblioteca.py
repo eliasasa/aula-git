@@ -1,9 +1,10 @@
-import db
-from connect import config
-from livro import Livro
+from config.db import SQL as db
+from config import connect
+from models import livro
+
 class Biblioteca:
 
-    sql = db.SQL(**config)
+    sql = db.SQL(**connect.config)
 
     @staticmethod
     def listar_livros():
@@ -60,6 +61,7 @@ class Biblioteca:
     def add_livro ():
         Biblioteca.sql.conectar
         
-        Livro.sql.conector.commit(Livro.create())
+        Livro.sql.conector.commit()
+        Livro.create()
         
         Biblioteca.sql.desconectar

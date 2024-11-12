@@ -1,7 +1,7 @@
 import mysql.connector as sql
-from db import SQL
-from biblioteca import Biblioteca
-from livro import Livro
+from classe.config.db import SQL
+from classe.controllers.biblioteca import Biblioteca
+from classe.models.livro import Livro
 
 # db = SQL(host='10.28.2.62', user='suporte', password='suporte', database='biblioteca')
 
