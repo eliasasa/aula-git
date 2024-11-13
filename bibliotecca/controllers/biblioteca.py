@@ -3,7 +3,7 @@ from config.connect import host
 from models.livro import Livro
 
 class Biblioteca:
-    sql = SQL(**host)  # Correção na instância do SQL
+    sql = SQL(**host)
 
     @staticmethod
     def listar_livros():
