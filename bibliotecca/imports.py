@@ -1,3 +1,5 @@
-from config.connect import host
+from config.db import SQL
+from controllers.biblioteca import Biblioteca
+from models.livro import Livro
 
-print(host)
+Biblioteca.listar_livros()
